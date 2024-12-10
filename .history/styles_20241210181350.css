@@ -373,9 +373,9 @@ footer {
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
     display: inline-block; /* Make the link behave like a block */
     text-decoration: none; /* Remove underline */
-    /* overflow: hidden; Prevent overflow */
     line-height: 1; /* Prevent extra spacing */
     padding: 0; /* Remove any padding */
+    position: relative; /* So the shadow can be positioned */
 }
 
 /* Style for the icon itself */
@@ -385,32 +385,43 @@ footer {
     width: 100%; /* Make icon take up full width */
     height: 100%; /* Make icon take up full height */
     color: inherit; /* Inherit the color from the parent */
-    transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling and color transition */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth scaling and opacity transition */
     line-height: 1; /* Prevent stretching */
     background-size: 400% 400%; /* Make the gradient cover a large area */
     transform-origin: center center; /* Set the origin of the rotation to the center */
+    position: relative;
+    z-index: 1; /* Icon will be on top of the shadow */
 }
 
-/* Hover Effect: Rainbow gradient on the icon */
+/* Hover Effect: Rainbow outline around the icon */
 .footer-socials a:hover i {
     color: transparent; /* Hide the default icon color */
     transform: scale(1.1) rotate(360deg); /* Slight zoom and rotation */
     
-    /* Apply the gradient background */
-    background-image: linear-gradient(90deg, #ff0000, #ff9900, #ffee00, #00ff00, #0099ff, #6600ff, #ff0099);
-    -webkit-background-clip: text; /* Clip gradient to the text */
-    background-clip: text; /* Clip gradient to the text */
+    /* Apply the rainbow outline */
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 16px rgba(255, 153, 0, 0.8), 
+                 0 0 24px rgba(255, 238, 0, 0.8), 0 0 32px rgba(0, 255, 0, 0.8),
+                 0 0 40px rgba(0, 153, 255, 0.8), 0 0 48px rgba(102, 0, 255, 0.8), 
+                 0 0 56px rgba(255, 0, 153, 0.8); /* Rainbow text-shadow */
     
+    /* Animate the rainbow gradient */
     animation: rainbowMove 6s linear infinite; /* Animate the gradient */
+    opacity: 0; /* Gradually hide the icon */
 }
 
 /* Animation for smooth, continuous color movement */
 @keyframes rainbowMove {
     0% {
-        background-position: 100% center; /* Start from the far right */
+        text-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 16px rgba(255, 153, 0, 0.8), 
+                     0 0 24px rgba(255, 238, 0, 0.8), 0 0 32px rgba(0, 255, 0, 0.8),
+                     0 0 40px rgba(0, 153, 255, 0.8), 0 0 48px rgba(102, 0, 255, 0.8), 
+                     0 0 56px rgba(255, 0, 153, 0.8); /* Start with a rainbow shadow */
     }
     100% {
-        background-position: -100% center; /* End at the far left */
+        text-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 16px rgba(255, 153, 0, 0.8), 
+                     0 0 24px rgba(255, 238, 0, 0.8), 0 0 32px rgba(0, 255, 0, 0.8),
+                     0 0 40px rgba(0, 153, 255, 0.8), 0 0 48px rgba(102, 0, 255, 0.8), 
+                     0 0 56px rgba(255, 0, 153, 0.8); /* End with rainbow shadow */
     }
 }
 

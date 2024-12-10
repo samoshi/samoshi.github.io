@@ -81,23 +81,20 @@
     </main>
     <div id="footer"></div>
     <script>
-      // Fetch the footer and insert it into the page
+      // Fetch and load the footer
       fetch("footer.html")
         .then((response) => response.text())
         .then((data) => {
-          // Insert the fetched footer into the page
+          // Insert the fetched footer into the #footer container
           document.getElementById("footer").innerHTML = data;
     
-          // Get the current page file name
-          const currentPage = window.location.pathname.split("/").pop();
+          // Dynamically hide the current page link from "Quick Links"
+          const currentPage = window.location.pathname.split("/").pop(); // Get the current file name
+          const quickLinks = document.querySelectorAll("#quick-links a"); // Get all footer quick links
     
-          // Select all quick links in the footer
-          const quickLinks = document.querySelectorAll(".footer-links ul li a");
-    
-          // Add a 'current-page' class to the link matching the current page
           quickLinks.forEach((link) => {
             if (link.getAttribute("href") === currentPage) {
-              link.classList.add("current-page");
+              link.style.display = "none"; // Hide the current page link
             }
           });
         })

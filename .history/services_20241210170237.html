@@ -69,27 +69,13 @@
         </div>
       </section>
     </main>
+
     <div id="footer"></div>
     <script>
-      // Fetch the footer and insert it into the page
       fetch("footer.html")
         .then((response) => response.text())
         .then((data) => {
-          // Insert the fetched footer into the page
           document.getElementById("footer").innerHTML = data;
-    
-          // Get the current page file name
-          const currentPage = window.location.pathname.split("/").pop();
-    
-          // Select all quick links in the footer
-          const quickLinks = document.querySelectorAll(".footer-links ul li a");
-    
-          // Add a 'current-page' class to the link matching the current page
-          quickLinks.forEach((link) => {
-            if (link.getAttribute("href") === currentPage) {
-              link.classList.add("current-page");
-            }
-          });
         })
         .catch((error) => console.error("Error loading footer:", error));
     </script>

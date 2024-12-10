@@ -65,14 +65,16 @@
             // Select all quick links in the footer
             const quickLinks = document.querySelectorAll(".footer-links ul li a");
       
-            // Add a 'current-page' class to the link matching the current page
+            // Hide the link that matches the current page
             quickLinks.forEach((link) => {
               if (link.getAttribute("href") === currentPage) {
-                link.classList.add("current-page");
+                link.parentElement.style.display = "none"; // Hide the list item
               }
             });
           })
           .catch((error) => console.error("Error loading footer:", error));
       </script>
+      
+      
   </body>
 </html>

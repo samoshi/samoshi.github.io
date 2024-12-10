@@ -312,57 +312,14 @@ footer {
     margin: 0.5rem 0;
 }
 
-/* Footer Page Links with Underline Hover */
 .footer-links a {
     color: #d1d1d1;
     text-decoration: none;
-    position: relative;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #00ff00; /* Neon green hover color */
-}
-
-.footer-links a::after {
-    content: "";
-    position: absolute;
-    bottom: -2px; /* Position for underline */
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(45deg, #00ff00, #00b3b3); /* Neon gradient */
-    transition: width 0.4s ease;
-}
-
-.footer-links a:hover::after {
-    width: 100%; /* Full underline on hover */
-}
-
-/* Highlight the current page link */
-.footer-links a.current-page {
-    color: #00ff00; /* Neon green */
-}
-
-.footer-links a.current-page::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%; /* Full underline for the current page */
-    height: 2px;
-    background: linear-gradient(45deg, #00ff00, #00b3b3);
-}
-
-/* Footer Contact Links */
-.footer-contact a {
     color: #4caf50;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-contact a:hover {
-    color: #d1d1d1;
 }
 
 /* Footer Social Links */
@@ -370,50 +327,22 @@ footer {
     font-size: 1.5rem; /* Icon size */
     margin-right: 15px; /* Spacing between icons */
     color: #d1d1d1; /* Default icon color */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
-    display: inline-block; /* Make the link behave like a block */
-    text-decoration: none; /* Remove underline */
-    /* overflow: hidden; Prevent overflow */
-    line-height: 1; /* Prevent extra spacing */
-    padding: 0; /* Remove any padding */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Style for the icon itself */
 .footer-socials a i {
-    display: block; /* Make the icon a block element */
-    font-size: 1.5rem; /* Initial icon size */
-    width: 100%; /* Make icon take up full width */
-    height: 100%; /* Make icon take up full height */
-    color: inherit; /* Inherit the color from the parent */
-    transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling and color transition */
-    line-height: 1; /* Prevent stretching */
-    background-size: 400% 400%; /* Make the gradient cover a large area */
-    transform-origin: center center; /* Set the origin of the rotation to the center */
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
 /* Hover Effect: Rainbow gradient on the icon */
 .footer-socials a:hover i {
-    color: transparent; /* Hide the default icon color */
-    transform: scale(1.1) rotate(360deg); /* Slight zoom and rotation */
-    
-    /* Apply the gradient background */
-    background-image: linear-gradient(90deg, #ff0000, #ff9900, #ffee00, #00ff00, #0099ff, #6600ff, #ff0099);
-    -webkit-background-clip: text; /* Clip gradient to the text */
-    background-clip: text; /* Clip gradient to the text */
-    
-    animation: rainbowMove 6s linear infinite; /* Animate the gradient */
+    background: linear-gradient(90deg, #ff0000, #ff9900, #ffee00, #00ff00, #0099ff, #6600ff, #ff0099);
+    -webkit-background-clip: text; /* Clip gradient to text */
+    background-clip: text;
+    color: transparent; /* Make the default color transparent */
+    transform: scale(1.2); /* Slight zoom on hover */
 }
-
-/* Animation for smooth, continuous color movement */
-@keyframes rainbowMove {
-    0% {
-        background-position: 100% center; /* Start from the far right */
-    }
-    100% {
-        background-position: -100% center; /* End at the far left */
-    }
-}
-
 
 /* Footer Bottom */
 .footer-bottom {

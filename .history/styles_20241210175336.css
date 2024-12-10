@@ -371,16 +371,15 @@ footer {
     margin-right: 15px; /* Spacing between icons */
     color: #d1d1d1; /* Default icon color */
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
-    display: inline-block; /* Make the link behave like a block */
+    display: inline-block; /* To make the link behave like a block */
     text-decoration: none; /* Remove underline */
-    /* overflow: hidden; Prevent overflow */
-    line-height: 1; /* Prevent extra spacing */
-    padding: 0; /* Remove any padding */
+    overflow: hidden; /* Prevent overflow */
+    line-height: 1; /* Keep it vertically aligned */
 }
 
 /* Style for the icon itself */
 .footer-socials a i {
-    display: block; /* Make the icon a block element */
+    display: inline-block;
     font-size: 1.5rem; /* Initial icon size */
     width: 100%; /* Make icon take up full width */
     height: 100%; /* Make icon take up full height */
@@ -413,6 +412,8 @@ footer {
         background-position: -100% center; /* End at the far left */
     }
 }
+
+
 
 
 /* Footer Bottom */

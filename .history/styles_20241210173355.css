@@ -370,49 +370,43 @@ footer {
     font-size: 1.5rem; /* Icon size */
     margin-right: 15px; /* Spacing between icons */
     color: #d1d1d1; /* Default icon color */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
-    display: inline-block; /* Make the link behave like a block */
-    text-decoration: none; /* Remove underline */
-    /* overflow: hidden; Prevent overflow */
-    line-height: 1; /* Prevent extra spacing */
-    padding: 0; /* Remove any padding */
+    transition: transform 2s ease, color 0.3s ease; /* Slow transition */
 }
 
-/* Style for the icon itself */
 .footer-socials a i {
-    display: block; /* Make the icon a block element */
-    font-size: 1.5rem; /* Initial icon size */
-    width: 100%; /* Make icon take up full width */
-    height: 100%; /* Make icon take up full height */
-    color: inherit; /* Inherit the color from the parent */
-    transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling and color transition */
-    line-height: 1; /* Prevent stretching */
+    transition: transform 0.3s ease;
+    display: inline-block;
     background-size: 400% 400%; /* Make the gradient cover a large area */
-    transform-origin: center center; /* Set the origin of the rotation to the center */
+    background-position: 0% 50%; /* Ensure the initial background position */
 }
 
-/* Hover Effect: Rainbow gradient on the icon */
+/* Hover Effect: Rainbow gradient on the icon, rotation, and animated colors */
 .footer-socials a:hover i {
-    color: transparent; /* Hide the default icon color */
-    transform: scale(1.1) rotate(360deg); /* Slight zoom and rotation */
+    color: transparent; /* Make the default color transparent */
+    transform: scale(1.2) rotate(360deg); /* Rotate and zoom */
     
-    /* Apply the gradient background */
+    /* Apply the gradient to the icon */
     background-image: linear-gradient(90deg, #ff0000, #ff9900, #ffee00, #00ff00, #0099ff, #6600ff, #ff0099);
-    -webkit-background-clip: text; /* Clip gradient to the text */
-    background-clip: text; /* Clip gradient to the text */
-    
-    animation: rainbowMove 6s linear infinite; /* Animate the gradient */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    background-clip: text;
+
+    /* Animation to move the gradient slowly */
+    animation: rainbowMove 4s linear infinite; /* Infinite animation */
 }
 
-/* Animation for smooth, continuous color movement */
+/* Animation for shifting the rainbow colors */
 @keyframes rainbowMove {
     0% {
-        background-position: 100% center; /* Start from the far right */
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
     }
     100% {
-        background-position: -100% center; /* End at the far left */
+        background-position: 0% 50%;
     }
 }
+
 
 
 /* Footer Bottom */

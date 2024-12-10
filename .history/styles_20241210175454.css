@@ -373,7 +373,7 @@ footer {
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
     display: inline-block; /* Make the link behave like a block */
     text-decoration: none; /* Remove underline */
-    /* overflow: hidden; Prevent overflow */
+    overflow: hidden; /* Prevent overflow */
     line-height: 1; /* Prevent extra spacing */
     padding: 0; /* Remove any padding */
 }

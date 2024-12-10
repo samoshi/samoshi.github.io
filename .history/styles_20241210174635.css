@@ -354,57 +354,36 @@ footer {
     background: linear-gradient(45deg, #00ff00, #00b3b3);
 }
 
-/* Footer Contact Links */
-.footer-contact a {
-    color: #4caf50;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-contact a:hover {
-    color: #d1d1d1;
-}
-
 /* Footer Social Links */
 .footer-socials a {
     font-size: 1.5rem; /* Icon size */
     margin-right: 15px; /* Spacing between icons */
     color: #d1d1d1; /* Default icon color */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
-    display: inline-block; /* Make the link behave like a block */
-    text-decoration: none; /* Remove underline */
-    /* overflow: hidden; Prevent overflow */
-    line-height: 1; /* Prevent extra spacing */
-    padding: 0; /* Remove any padding */
+    transition: transform 0.3s ease, color 0.3s ease; /* Slow transition */
+    display: inline-block; /* Make sure the anchor is inline */
 }
 
-/* Style for the icon itself */
 .footer-socials a i {
-    display: block; /* Make the icon a block element */
-    font-size: 1.5rem; /* Initial icon size */
-    width: 100%; /* Make icon take up full width */
-    height: 100%; /* Make icon take up full height */
-    color: inherit; /* Inherit the color from the parent */
-    transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling and color transition */
-    line-height: 1; /* Prevent stretching */
-    background-size: 400% 400%; /* Make the gradient cover a large area */
-    transform-origin: center center; /* Set the origin of the rotation to the center */
+    transition: transform 0.3s ease;
+    display: inline-block;
+    background-color: transparent; /* No background by default */
+    background-size: 200% 200%; /* Make the gradient cover a large area */
+    background-position: left center; /* Initial position */
+    background-image: none; /* No gradient initially */
+    color: inherit; /* Inherit color from parent */
 }
 
-/* Hover Effect: Rainbow gradient on the icon */
+/* Hover Effect: Rainbow gradient on the icon, rotation, and animated colors */
 .footer-socials a:hover i {
-    color: transparent; /* Hide the default icon color */
-    transform: scale(1.1) rotate(360deg); /* Slight zoom and rotation */
+    color: transparent; /* Make the default color transparent */
+    transform: scale(1.2) rotate(360deg); /* Rotate and zoom */
     
-    /* Apply the gradient background */
-    background-image: linear-gradient(90deg, #ff0000, #ff9900, #ffee00, #00ff00, #0099ff, #6600ff, #ff0099);
-    -webkit-background-clip: text; /* Clip gradient to the text */
-    background-clip: text; /* Clip gradient to the text */
-    
-    animation: rainbowMove 6s linear infinite; /* Animate the gradient */
+    /* Apply the gradient and animation */
+    background-image: linear-gradient(90deg, #ff0000, #ff9900, #ffee00, #00ff00, #0099ff, #6600ff, #ff0099); /* Gradient colors */
+    animation: rainbowMove 6s linear infinite; /* Infinite animation */
 }
 
-/* Animation for smooth, continuous color movement */
+/* Animation for creating a smooth, continuous scrolling effect */
 @keyframes rainbowMove {
     0% {
         background-position: 100% center; /* Start from the far right */
@@ -413,6 +392,8 @@ footer {
         background-position: -100% center; /* End at the far left */
     }
 }
+
+
 
 
 /* Footer Bottom */

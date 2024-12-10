@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services | Noxiom</title>
+    <title>About | Noxiom</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -31,39 +31,40 @@
 
     <main>
       <section class="hero">
-        <h1>Our Services</h1>
-        <p>Custom DevOps and IT solutions tailored to your business needs.</p>
+        <h1>About Us</h1>
+        <p>
+          Noxiom is a DevOps-focused IT company committed to delivering
+          cutting-edge solutions for modern businesses.
+        </p>
       </section>
 
       <section class="features">
-        <h2>What We Offer</h2>
+        <h2>Who We Are</h2>
+        <p>
+          At Noxiom, we believe in empowering organizations through automation,
+          scalability, and security. Our team of experts thrives on solving
+          complex challenges with creative and efficient solutions.
+        </p>
         <div class="feature-grid">
           <div class="feature-item">
-            <h3>CI/CD Pipelines</h3>
+            <h3>Our Mission</h3>
             <p>
-              Streamline your development process with robust continuous
-              integration and deployment workflows.
+              To revolutionize IT landscapes with innovative DevOps practices,
+              enabling businesses to achieve their full potential.
             </p>
           </div>
           <div class="feature-item">
-            <h3>Cloud Infrastructure</h3>
+            <h3>Our Vision</h3>
             <p>
-              Leverage AWS, Azure, or Google Cloud for scalable, secure, and
-              cost-efficient operations.
+              To be the global leader in IT automation and infrastructure
+              excellence.
             </p>
           </div>
           <div class="feature-item">
-            <h3>Automation</h3>
+            <h3>Our Values</h3>
             <p>
-              Enhance efficiency with Infrastructure as Code, automated
-              monitoring, and self-healing systems.
-            </p>
-          </div>
-          <div class="feature-item">
-            <h3>Security Optimization</h3>
-            <p>
-              Ensure your systems are fortified with state-of-the-art security
-              strategies.
+              Innovation, Integrity, Collaboration, and Customer Success are at
+              the heart of what we do.
             </p>
           </div>
         </div>
@@ -71,25 +72,10 @@
     </main>
     <div id="footer"></div>
     <script>
-      // Fetch the footer and insert it into the page
       fetch("footer.html")
         .then((response) => response.text())
         .then((data) => {
-          // Insert the fetched footer into the page
           document.getElementById("footer").innerHTML = data;
-    
-          // Get the current page file name
-          const currentPage = window.location.pathname.split("/").pop();
-    
-          // Select all quick links in the footer
-          const quickLinks = document.querySelectorAll(".footer-links ul li a");
-    
-          // Add a 'current-page' class to the link matching the current page
-          quickLinks.forEach((link) => {
-            if (link.getAttribute("href") === currentPage) {
-              link.classList.add("current-page");
-            }
-          });
         })
         .catch((error) => console.error("Error loading footer:", error));
     </script>
