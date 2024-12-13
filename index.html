@@ -11,24 +11,6 @@
     />
   </head>
   <body>
-    <header>
-      <div class="header-container">
-        <a href="index.html" class="logo">
-          <h1>Noxiom</h1>
-        </a>
-        <nav class="nav-links">
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="cta">
-          <a href="contact.html" class="button">Get in Touch</a>
-        </div>
-      </div>
-    </header>
-
     <main>
       <section class="hero">
         <h1>Welcome to Noxiom</h1>
@@ -37,7 +19,6 @@
         </p>
         <a href="services.html" class="cta-button">Explore Services</a>
       </section>
-
       <section class="features">
         <div class="feature">
           <h2>Why Choose Us?</h2>
@@ -69,7 +50,6 @@
           </div>
         </div>
       </section>
-
       <section class="call-to-action">
         <h2>Ready to transform your IT landscape?</h2>
         <p>
@@ -80,28 +60,6 @@
       </section>
     </main>
     <div id="footer"></div>
-    <script>
-      // Fetch the footer and insert it into the page
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          // Insert the fetched footer into the page
-          document.getElementById("footer").innerHTML = data;
-    
-          // Get the current page file name
-          const currentPage = window.location.pathname.split("/").pop();
-    
-          // Select all quick links in the footer
-          const quickLinks = document.querySelectorAll(".footer-links ul li a");
-    
-          // Add a 'current-page' class to the link matching the current page
-          quickLinks.forEach((link) => {
-            if (link.getAttribute("href") === currentPage) {
-              link.classList.add("current-page");
-            }
-          });
-        })
-        .catch((error) => console.error("Error loading footer:", error));
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>
